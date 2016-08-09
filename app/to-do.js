@@ -70,4 +70,7 @@ nextDay.setDate(today.getDate() + 2);
 tasks.push(new WorkTask(today, "Update website.", "High", diane));
 tasks.push(new WorkTask(tomorrow, "Go to meeting.", "Medium", thor));
 tasks.push(new WorkTask(nextDay, "Clean ceiling.", "Low", loki));
-console.log(tasks);
+for (var _i = 0, tasks_1 = tasks; _i < tasks_1.length; _i++) {
+    var task = tasks_1[_i];
+    document.body.innerHTML = task.description;
+}

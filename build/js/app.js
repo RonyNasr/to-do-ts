@@ -90,6 +90,7 @@ var ToDoList;
 /// <reference path="to-do-classes-interfaces.ts" />
 /// <reference path="to-do-people.ts" />
 /// <reference path="to-do-listing-functions.ts" />
+/// <reference path="jquery.d.ts" />
 var people = ToDoList.people;
 var tasks = [];
 tasks.push(new ToDoList.HomeTask("Do the dishes.", "High"));
@@ -111,7 +112,15 @@ tasks.push(new ToDoList.WorkTask(nextDay, "Clean ceiling.", "Low", people.loki))
 console.log(tasks);
 var thorTasks = ToDoList.describeTasksForPerson(people.thor, tasks);
 console.log("Here are Thor's tasks: ");
-for (var _i = 0, thorTasks_1 = thorTasks; _i < thorTasks_1.length; _i++) {
-    var task = thorTasks_1[_i];
-    console.log(task);
-}
+$(document).ready(function () {
+    tasks.forEach(function (task) {
+        console.log(task);
+        $("#output").append("<h4>" + task.description + "</h4>");
+    });
+});
+// if(document.readyState === 'complete'){
+//   for(var task of tasks){
+//     console.log(task);
+//     document.getElementById("output").innerHTML.concat("<h4>" + task.description +"</h4>");
+//   }
+// }

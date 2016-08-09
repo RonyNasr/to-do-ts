@@ -71,4 +71,6 @@ tasks.push(new WorkTask(today, "Update website.", "High", diane));
 tasks.push(new WorkTask(tomorrow, "Go to meeting.", "Medium", thor));
 tasks.push(new WorkTask(nextDay, "Clean ceiling.", "Low", loki));
 
-console.log(tasks);
+for(var task of tasks){
+  document.body.innerHTML  = task.description;
+}
